@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Ucapan Valentine</title>
+    <link rel="stylesheet" href="wish.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="mine.html" class="btn-beranda">🏠 Beranda</a>
+            </ul>
+        </nav>
+    </header>
+    <!-- Floating hearts -->
+    <!-- Floating hadiah & bunga -->
+    <div class="float-icon" style="left:10%">🎁</div>
+    <div class="float-icon" style="left:25%;animation-delay:2s">🌸</div>
+    <div class="float-icon" style="left:40%;animation-delay:4s">💖</div>
+    <div class="float-icon" style="left:60%;animation-delay:1s">🌹</div>
+    <div class="float-icon" style="left:80%;animation-delay:3s">🎀</div>
+
+
+    <main>
+        <section class="ucapan-section">
+            <h2>Kirim Kartu Ucapan Cinta</h2>
+            <form action="uwish.php" method="POST" class="ucapan-form">
+
+                <label for="pesan">Pesan Ucapan:</label>
+                <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis ucapan cintamu di sini..."
+                    required></textarea>
+
+                <button type="submit">Kirim Ucapan</button>
+            </form>
+        </section>
+    </main>
+    <!-- CONFETTI -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Ucapan Berhasil Dikirim 🎉</h2>
+            <p>Semoga dia makin sayang 💕</p>
+            <button onclick="tutupPopup()">Tutup</button>
+        </div>
+    </div>
+
+</body>
+<script>
+
+    const form = document.querySelector(".ucapan-form");
+
+    form.addEventListener("submit", function () {
+
+        // Confetti
+        confetti({
+            particleCount: 120,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+
+        // Popup tampil sebentar sebelum submit
+        document.getElementById("popup").style.display = "flex";
+
+        // Popup hilang auto
+        setTimeout(() => {
+            document.getElementById("popup").style.display = "none";
+        }, 2000);
+
+    });
+
+    function tutupPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+</script>
+
+
+</html>
