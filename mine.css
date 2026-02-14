@@ -5,6 +5,9 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #ffd6e7, #e0c3fc);
             margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column
         }
 
         /* =========================
@@ -210,3 +213,4 @@
                 font-size: 12px;
             }
         }
+
