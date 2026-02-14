@@ -188,29 +188,48 @@
             }
         }
 
-        /* =========================
-           RESPONSIVE HP
-        ========================= */
-        @media (max-width: 480px) {
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width:768px){
 
-            h1 {
-                font-size: 22px;
-            }
+    body{
+        padding:0;
+    }
 
-            .title {
-                font-size: 24px;
-            }
+    .hero{
+        padding:40px 15px;
+    }
 
-            .hero-img {
-                max-width: 75%;
-            }
+    .hero-img{
+        width:60%;
+        max-width:260px;
+    }
 
-            .card {
-                width: 95%;
-            }
+    .card-container{
+        flex-direction:column;
+        align-items:center;
+        gap:25px;
+    }
 
-            footer {
-                font-size: 12px;
-            }
-        }
+    .card{
+        width:92%;
+        min-height:auto;
+    }
+}
+
+
+/* EXTRA SMALL */
+@media (max-width:480px){
+
+    .hero-img{
+        width:70%;
+    }
+
+    .card{
+        width:95%;
+    }
+}
+
+
 
